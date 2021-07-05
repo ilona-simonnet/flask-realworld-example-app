@@ -88,6 +88,12 @@ Exercice DevOps
 
 A - Mise en conteneur de l'application
 
+Contruction image :
+
+
+Exécution image : 
+    docker build -t imagename:version
+
 
 B - Mise en place de la chaîne CI/CD
 
