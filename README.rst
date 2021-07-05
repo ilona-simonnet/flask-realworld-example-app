@@ -81,3 +81,14 @@ This will generate a new migration script. Then run ::
 To apply the migration.
 
 For a full migration command reference, run ``flask db --help``.
+
+
+Exercice DevOps
+---------------
+
+A - Mise en conteneur de l'application
+
+
+B - Mise en place de la chaîne CI/CD
+
+C - Activation du https
