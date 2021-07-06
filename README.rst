@@ -94,18 +94,19 @@ Exercice DevOps
     - CMD : commande à exécuter lors du démarrage du conteneur (ici on exécute app.py)  
     
 *Exécution image:*   
-    - docker build -t image_name:version      
-    - docker run -d -v /path_to_folder_to_store_app_files/ -p 8443 --name container_name image_name  
+    - docker build -t flask-app:v1        
+    - docker run -d -v /path_to_folder_to_store_app_files/ -p 8443 --name container_name flask-app:v1   
 
 **B - Mise en place de la chaîne CI/CD**
 
 *Pull de l'image construite dans la partie A:*  
-    docker pull ilosim/exercice_devops:image_name  
+    docker pull ilosim/exercice_devops:flask-app:v1  
 
 **C - Activation du https**  
 
 *Génération du certificat x.509:*
 
 *Exécution de l'application avec le https activé:*
+
 
 
