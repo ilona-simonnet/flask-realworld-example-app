@@ -88,13 +88,18 @@ Exercice DevOps
 
 A - Mise en conteneur de l'application
 
-Contruction image :
-
-
-Exécution image : 
-    docker build -t imagename:version
-
+Contruction image:)
+    FROM : image sur laquelle on se base (ici centos, la version) 
+    EXPOSE : port sur lequel l'application écoute
+    CMD : commande à exécuter lors du démarrage du conteneur (ici on exécute app.py)
+    
+    Exécution image: 
+    docker build -t image_name:version
+    docker run -d -v /path_to_folder_to_store_app_files/ -p 8443 --name container_name image_name
 
 B - Mise en place de la chaîne CI/CD
+
+Pull de l'image construite dans la partie A:
+    docker pull ilosim/exercice_devops:image_name
 
 C - Activation du https
