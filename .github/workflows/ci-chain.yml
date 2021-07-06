@@ -1,0 +1,35 @@
+name: CI chain run tests
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:	
+  Test:
+	steps:
+	- uses: actions/checkout@v1
+	  run: |
+	       python /tests/conftest.py 
+	       python /tests/test_articles.py 
+	       python /tests/test_authentication.py
+	       python /tests/test_config.py
+	       python /tests/test_models.py
+	       python /tests/test_profile.py
+	
+
+  Docker-build-and-push:
+	name: Build and push Docker image to Docker Hub
+	if: github.event_name == 'release'
+	steps:
+	-name: Check out the repo
+	-uses: actions/checkout@v2
+
+	- name: Build the Docker image 
+	  run: docker build . --file Dockerfile --tag image_name:$(date +%s)
+
+	- name: Docker push
+	  run: docker push ${{secrets.DOCKER_USERNAME}}/exercice_devops
+
+
