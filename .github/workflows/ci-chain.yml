@@ -11,12 +11,12 @@ jobs:
     steps:
     - uses: actions/checkout@v1
       run: |
-	   python /tests/conftest.py 
-	   python /tests/test_articles.py 
-	   python /tests/test_authentication.py
-	   python /tests/test_config.py
-	   python /tests/test_models.py
-	   python /tests/test_profile.py
+	   ./tests/conftest.py 
+	   ./tests/test_articles.py 
+	   ./tests/test_authentication.py
+	   ./tests/test_config.py
+	   ./tests/test_models.py
+	   ./tests/test_profile.py
 	
 
   Docker-build-and-push:
