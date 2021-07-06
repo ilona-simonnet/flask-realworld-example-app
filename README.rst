@@ -103,3 +103,9 @@ Exercice DevOps
     docker pull ilosim/exercice_devops:image_name  
 
 **C - Activation du https**  
+
+*Génération du certificat x.509:*
+
+*Exécution de l'application avec le https activé:*
+
+
