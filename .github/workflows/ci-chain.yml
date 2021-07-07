@@ -14,8 +14,8 @@ jobs:
            tests/test_articles.py 
            tests/test_authentication.py
            tests/test_config.py
-	         tests/test_models.py
-	         tests/test_profile.py
+	   tests/test_models.py
+	   tests/test_profile.py
   Docker-build-and-push:
      name: Build and push Docker image to Docker Hub
      if: github.event_name == 'release'
