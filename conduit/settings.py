@@ -3,6 +3,8 @@
 import os
 from datetime import timedelta
 
+from OpenSSL import SSL
+
 
 class Config(object):
     """Base configuration."""
@@ -27,6 +29,10 @@ class Config(object):
         'http://localhost:4000',
     ]
     JWT_HEADER_TYPE = 'Token'
+    
+    context = SSL.Context(SSL.PROTOCOL_TLSv1_2)
+    context.use_privatekey_file('ca-key.pem')
+    context.use_certificate_file('ca-cert.pem')  
 
 
 class ProdConfig(Config):
