@@ -103,8 +103,10 @@ Exercice DevOps
  
 **B - Mise en place de la chaîne CI/CD**
 
-*Pull de l'image construite dans la partie A:*  
+*Pull de l'image construite dans la partie A:*  ::
+
     docker pull ilosim/exercice_devops:flask-app:v1  
+
 
 **C - Activation du https**  
 
