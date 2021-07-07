@@ -107,6 +107,12 @@ Exercice DevOps
 
 *Génération du certificat x.509:*
 
+- openssl req -newkey rsa:2048 -days 365000 -nodes -keyout server-key.pem -out server-req.pem
+- openssl rsa -in server-key.pem -out server-key.pem   
+- openssl x509 -req -in server-req.pem -days 365000 -CA ca-cert.pem -CAkey ca-key.pem -set_serial 01 -out server-cert.pem
+
+- openssl verify -CAfile ca.pem server-cert.pem --> pour vérifier que le certificat x509 a bien été généré
+
 *Exécution de l'application avec le https activé:*
 
 
