@@ -5,6 +5,7 @@ ENV FLASK_DEBUG=1
 RUN dnf update -y \
 && dnf install python3 \
 && pip install Flask
+&& dnf install openssl
 
 WORKDIR /app
 COPY . /app
