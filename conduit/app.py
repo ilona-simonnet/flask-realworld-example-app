@@ -2,15 +2,7 @@
 """The app module, containing the app factory function."""
 from flask import Flask
 from conduit.extensions import bcrypt, cache, db, migrate, jwt, cors
-
-
-
-from OpenSSL import SSL
-context = SSL.Context(SSL.PROTOCOL_TLSv1_2)
-context.use_privatekey_file('ca-key.pem')
-context.use_certificate_file('server-cert.pem')   
-
-
+ 
 
 from conduit import commands, user, profile, articles
 from conduit.settings import ProdConfig
