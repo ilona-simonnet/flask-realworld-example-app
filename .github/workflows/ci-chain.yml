@@ -13,9 +13,6 @@ jobs:
       run: tests/conftest.py 
            tests/test_articles.py 
            tests/test_authentication.py
-	
-	
-
   Docker-build-and-push:
      name: Build and push Docker image to Docker Hub
      if: github.event_name == 'release'
