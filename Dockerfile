@@ -13,4 +13,4 @@ RUN python -m pip install -r requirements.txt
 
 EXPOSE 8443
 
-CMD ["./autoapp.py"]
+CMD python autoapp.py
