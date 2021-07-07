@@ -9,7 +9,7 @@ RUN dnf update -y \
 WORKDIR /app
 COPY . /app
 
-RUN pip install -r requirements.txt
+RUN python -m pip install -r requirements.txt
 
 EXPOSE 8443
 
