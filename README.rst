@@ -96,7 +96,9 @@ Exercice DevOps
 *Exécution image:*::
 
     - docker build -t flask-app:v1        
-    - docker run -tid -p 8443 -v /path_to_local_volume:/path_to_container--name <container_name> flask-app:v1 --> permet de stocker les données dans un répertoire local partagé entre le serveur qui héberge docker et le(s) conteneur(s)   
+    - docker run -tid -p 8443 -v /path_to_local_volume:/path_to_container--name <container_name> flask-app:v1 
+    
+    La dernière commande permet de stocker les données dans un répertoire local partagé entre le serveur qui héberge docker et le(s) conteneur(s)   
     
  
 **B - Mise en place de la chaîne CI/CD**
@@ -112,8 +114,9 @@ Exercice DevOps
 - openssl rsa -in server-key.pem -out server-key.pem   
 - openssl x509 -req -in server-req.pem -days 365000 -CA ca-cert.pem -CAkey ca-key.pem -set_serial 01 -out server-cert.pem
 
-- openssl verify -CAfile ca.pem server-cert.pem --> pour vérifier que le certificat x509 a bien été généré
+On peut vérifier que le certificat x509 a bien été généré avec : ::
 
+- openssl verify -CAfile ca.pem server-cert.pem 
 
 *Exécution de l'application avec le https activé:*
 
