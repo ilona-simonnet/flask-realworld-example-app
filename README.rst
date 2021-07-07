@@ -95,7 +95,8 @@ Exercice DevOps
     
 *Exécution image:*   
     - docker build -t flask-app:v1        
-    - docker run -d -v /path_to_folder_to_store_app_files/ -p 8443 --name container_name flask-app:v1   
+    - docker run -tid -p 8443 -v /path_to_local_volume:/path_to_container--name <container_name> flask-app:v1 --> permet de stocker les données dans un répertoire local partagé entre le serveur qui héberge docker et le(s) conteneur(s)           
+ 
 
 **B - Mise en place de la chaîne CI/CD**
 
