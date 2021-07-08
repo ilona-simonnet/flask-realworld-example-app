@@ -28,7 +28,7 @@ def register_user(username, password, email, **kwargs):
 
 
 @blueprint.route('/api/users/login', methods=('POST',))
-@jwt_optional
+#@jwt_optional
 @use_kwargs(user_schema)
 @marshal_with(user_schema)
 def login_user(email, password, **kwargs):
