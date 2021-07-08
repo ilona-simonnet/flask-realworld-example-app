@@ -11,7 +11,7 @@ jobs:
    runs-on: ubuntu-latest
    name: run app tests
    steps:
-    - run: tests/conftest.py 
+    - run: python tests/conftest.py 
     - run: tests/test_articles.py 
     - run: tests/test_authentication.py
     - run: tests/test_config.py
