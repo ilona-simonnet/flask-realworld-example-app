@@ -7,8 +7,8 @@ on:
     branches: [ master ]
 
 jobs:	
-  test:
-   runs-on: centos:8
+  Test:
+   runs-on: ubuntu-latest
    steps:
       - uses: actions/checkout@v1
       - run: tests/conftest.py 
@@ -18,18 +18,21 @@ jobs:
       - run: tests/test_models.py
       - run: tests/test_profile.py
   
-  docker-build-and-push:
-     runs-on: centos:8
+  Docker-build-and-push:
+     runs-on: ubuntu-latest
      name: Build and push Docker image to Docker Hub
      if: github.event_name == 'release'
      steps:
       - name: Check out the repo
       - uses: actions/checkout@v2
-
+ 
+      - name: Login to DockerHub registry
+        run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKERH_USERNAME }} --password-stdin
+      
       - name: Build the Docker image 
         run: docker build . --file Dockerfile --tag image_name:$(date +%s)
 
-      - name: Docker push
+      - name: Push the Docker image to Docker hub repository
         run: docker push ${{secrets.DOCKER_USERNAME}}/exercice_devops
 
 
