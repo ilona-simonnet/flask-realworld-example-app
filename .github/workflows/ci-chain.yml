@@ -27,12 +27,12 @@ jobs:
       - uses: actions/checkout@v2
  
       - name: Login to DockerHub registry
-        run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKERH_USERNAME }} --password-stdin
+      - run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKERH_USERNAME }} --password-stdin
       
       - name: Build the Docker image 
-        run: docker build . --file Dockerfile --tag image_name:$(date +%s)
+      - run: docker build . --file Dockerfile --tag flask-app:$(date +%s)
 
       - name: Push the Docker image to Docker hub repository
-        run: docker push ${{secrets.DOCKER_USERNAME}}/exercice_devops
+      - run: docker push ${{secrets.DOCKER_USERNAME}}/exercice_devops
 
 
