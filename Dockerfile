@@ -2,9 +2,9 @@ FROM centos:8
 
 ENV FLASK_DEBUG=1
 
-RUN dnf update -y \
-&& dnf install python3 \
-&& pip install Flask \
+RUN dnf update -y 
+RUN dnf install python3 
+RUN pip install Flask 
 
 WORKDIR /app
 COPY . /app
