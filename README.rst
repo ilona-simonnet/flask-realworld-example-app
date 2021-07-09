@@ -103,6 +103,15 @@ Exercice DevOps
  
 **B - Mise en place de la chaîne CI/CD**
 
+*Etapes de la chaîne CI:*
+
+La chaîne CI est constituée de 2 jobs :
+- Tests
+- Build & push de l'image Docker
+
+La partie Tests permet de tester le code et de lancer les scripts de tests avec l'outil pytest.
+Dans la partie Build & push, on se connecte au répertoire du Docker Hub, on construit l'image et on la pousse vers le répertoire ilosim/exercice_devops
+
 *Pull de l'image construite dans la partie A:*  ::
 
     docker pull ilosim/exercice_devops:flask-app:v1  
