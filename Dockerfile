@@ -4,7 +4,7 @@ ENV FLASK_DEBUG=1
 
 RUN dnf update -y 
 RUN dnf upgrade -y
-RUN dnf install python3 
+RUN sudo dnf install python3 
 #RUN pip install Flask 
 
 WORKDIR /app
