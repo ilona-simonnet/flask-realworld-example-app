@@ -2,15 +2,17 @@ FROM centos:8
 
 ENV FLASK_DEBUG=1
 
-RUN dnf update -y \
-&& dnf install python3 \
-&& pip install Flask
-&& dnf install openssl
+RUN dnf update -y 
+RUN dnf upgrade -y
+RUN dnf install python3 
+#RUN pip install Flask 
 
 WORKDIR /app
 COPY . /app
 
-RUN python -m pip install -r requirements.txt
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
 
 EXPOSE 8443
 

@@ -4,7 +4,7 @@ import datetime as dt
 
 from flask import Blueprint, jsonify
 from flask_apispec import marshal_with, use_kwargs
-from flask_jwt_extended import current_user, jwt_required, jwt_optional
+from flask_jwt_extended import current_user, jwt_required #, jwt_optional
 from marshmallow import fields
 
 from conduit.exceptions import InvalidUsage
@@ -21,7 +21,7 @@ blueprint = Blueprint('articles', __name__)
 ##########
 
 @blueprint.route('/api/articles', methods=('GET',))
-@jwt_optional
+#@jwt_optional
 @use_kwargs({'tag': fields.Str(), 'author': fields.Str(),
              'favorited': fields.Str(), 'limit': fields.Int(), 'offset': fields.Int()})
 @marshal_with(articles_schema)
@@ -76,7 +76,7 @@ def delete_article(slug):
 
 
 @blueprint.route('/api/articles/<slug>', methods=('GET',))
-@jwt_optional
+#@jwt_optional
 @marshal_with(article_schema)
 def get_article(slug):
     article = Article.query.filter_by(slug=slug).first()
