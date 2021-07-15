@@ -6,8 +6,8 @@ RUN dnf update -y
 RUN dnf upgrade -y
 RUN dnf install -y python3-pip
 #RUN pip install Flask 
-RUN pip --version
 RUN pip3 --version
+RUN python3-pip --version
 
 WORKDIR /app
 COPY . /app
