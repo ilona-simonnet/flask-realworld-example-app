@@ -7,7 +7,7 @@ RUN dnf upgrade -y
 RUN dnf install -y python3-pip
 #RUN pip install Flask 
 #RUN pip3 --version
-RUN pip3 install -y psycopg2-binary
+RUN pip3 install psycopg2-binary
 
 
 WORKDIR /app
