@@ -9,8 +9,8 @@ marshmallow
 Flask_Bcrypt
 flask_apispec
 Flask
-PyJWT=1.7.1
-Flask-JWT-Extended=3.0
+PyJWT
+Flask-JWT-Extended
 unicode_slugify
 psycopg2
 Flask-Migrate
