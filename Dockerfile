@@ -5,7 +5,7 @@ ENV FLASK_DEBUG=1
 RUN dnf update -y
 RUN dnf upgrade -y
 RUN dnf install -y python3-pip
-RUN install libpq-dev
+RUN dnf install libpq-dev
 RUN pip3 install psycopg2-binary
 
 WORKDIR /app
