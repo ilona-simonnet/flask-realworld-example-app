@@ -7,7 +7,7 @@ RUN dnf upgrade -y
 RUN dnf install -y python3-pip
 #RUN pip install Flask 
 RUN pip3 --version
-RUN python3-pip --version
+
 
 WORKDIR /app
 COPY . /app
@@ -15,7 +15,7 @@ COPY . /app
 COPY requirements.txt .
 
 
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 EXPOSE 8443
 
