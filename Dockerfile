@@ -2,10 +2,10 @@ FROM centos:8
 
 ENV FLASK_DEBUG=1
 
-RUN dnf update -y
-RUN dnf upgrade -y
+RUN dnf update -y && dnf upgrade -y
 RUN dnf install -y python3-pip
 RUN dnf install -y libpq-devel
+RUN dnf install gcc
 RUN pip3 install psycopg2-binary
 
 WORKDIR /app
