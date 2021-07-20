@@ -2,11 +2,11 @@ FROM centos:8
 
 ENV FLASK_DEBUG=1
 
-RUN dnf update -y && dnf upgrade -y
-RUN dnf install -y python3
-RUN dnf install -y libpq-devel
-#RUN dnf install -y gcc
-#RUN pip3 install psycopg2-binary
+RUN dnf update -y && dnf upgrade -y \
+&& dnf install -y python3 \
+&& dnf install -y libpq-devel \
+&& install python3-dev \
+&& pip3 install psycopg2-binary 
 
 WORKDIR /app
 COPY . /app
@@ -17,4 +17,4 @@ RUN pip3 install -r requirements.txt
 
 EXPOSE 8443
 
-CMD python autoapp.py
+CMD python3 autoapp.py
