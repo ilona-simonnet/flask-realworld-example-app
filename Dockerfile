@@ -7,6 +7,7 @@ RUN dnf update -y && dnf upgrade -y \
 && dnf install -y libpq-devel \
 && dnf install -y python3-devel \
 && dnf install -y postgresql-devel \
+&& dnf install -y gcc \
 && pip3 install psycopg2-binary 
 
 WORKDIR /app
